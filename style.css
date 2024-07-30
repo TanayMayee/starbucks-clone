@@ -286,6 +286,59 @@ section a {
     padding: 40px 0;
 }
 
+/* Hamburger Menu Icon */
+
+.hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    background: none;
+    border: none;
+    z-index: 10;
+    transition: all 0.25s;
+    display: none;
+}
+
+/* Hamburger Lines */
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    transform: rotate(0);
+    transition: all 0.5s;
+}
+
+/* Moving down middle hamburger line */
+.hamburger-middle{
+    transform: translateY(7px);
+}
+
+/* Moving down bottom hamburger line */
+.hamburger-bottom{
+    transform: translateY(14px);
+}
+
+/* Transition the hamburger into a cross */
+.open .hamburger-top{
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .hamburger-middle{
+    display: none;
+}
+
+.open .hamburger-bottom{
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+
 @media(max-width: 960px){
     .text-xl {
         font-size: 30px;
@@ -297,6 +350,35 @@ section a {
 
     .text-md {
         font-size: 19px;
+    }
+}
+
+@media(max-width: 768px){
+    .hamburger {
+        display: block;
+    }
+
+    .grid-col-2{
+        grid-template-columns: 1fr;
+    }
+
+    .grid-reversed :first-child{
+        order: 0;
+    }
+
+    /* Hiding navbar for smaller screens */
+    .navbar .navbar-nav-left,
+    .navbar .navbar-nav-right{
+        display: none;
+    }
+
+    .navbar-brand img{
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer {
+        text-align: center;
     }
 }
 
