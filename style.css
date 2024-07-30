@@ -119,6 +119,34 @@ section a {
     margin: 0 auto;
 }
 
+.box-text {
+    max-width: 500px;
+    text-align: center;
+    justify-self: center;
+    padding: 20px 0;
+}
+
+.box-text .btn{
+    margin-top: 20px;
+}
+
+/* Grid Styles */
+
+.grid-col-2 {
+    display: grid;
+    /* Need to specify the width of the columns 
+    to add the 2 elements into a grid*/
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Reversing the order of some grids */
+.grid-reversed :first-child{
+    order: 2
+}
+
 /* Buttons */
 .btn {
     cursor: pointer;
@@ -137,7 +165,7 @@ section a {
     color: #000;
 }
 
-.btn-dark-outline:hover {
+.btn-dark-outline:hover, .btn-light-outline:hover {
     background-color: rgba(0,0,0,0.06);
 }
 
